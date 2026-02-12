@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Église Saint-Martin - Logo (church only, white on blue header) -->
+<!-- Based on cleaned designer logo: archive/Logo-St-Martin-clean.svg -->
+
+<svg
+   version="1.1"
+   viewBox="115 20 201.89 191.5"
+   id="svg43"
+   sodipodi:docname="logo.svg"
+   width="201.89"
+   height="191.5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs47" />
+  <sodipodi:namedview
+     id="namedview45"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4.9885714"
+     inkscape:cx="89.504582"
+     inkscape:cy="81.285796"
+     inkscape:window-width="2350"
+     inkscape:window-height="1125"
+     inkscape:window-x="2342"
+     inkscape:window-y="81"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg43" />
+  <g
+     id="church"
+     fill="#ffffff"
+     style="fill:#ffffff;fill-opacity:1"
+     transform="translate(36.99,-8.04)">
+    <!-- Bell tower spire -->
+    <polygon
+       points="135.54,130.82 135.19,94.37 142.37,43.32 131.32,92.84 131.83,130.44 "
+       id="polygon2"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="154.13,93.88 133.77,94.2 133.78,95.45 154.31,95.14 154.64,118.1 155.93,118.08 155.46,93.86 142.37,43.04 142.07,45.42 "
+       id="polygon4"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Bell tower windows -->
+    <path
+       d="m 147.18,92.78 -4.95,-0.09 0.04,-0.64 c 0.33,-5.79 1.11,-8.82 2.32,-9.02 0.62,-0.02 2.03,-0.01 2.55,9.07 z m -3.58,-1.33 2.19,0.04 c -0.2,-2.87 -0.63,-5.95 -1.07,-6.98 -0.47,1 -0.93,4.08 -1.12,6.94 z"
+       id="path6"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 134.66,92.71 0.05,0.08 c 0.56,-8.84 1.55,-9.57 2.39,-9.72 0.83,-0.15 1.72,0.87 2.28,9.71 z m 2.47,-8.11 c -0.44,1.17 -0.88,4.1 -1.08,6.85 l 2,-0.01 c -0.2,-2.71 -0.56,-5.61 -0.92,-6.84 z"
+       id="path8"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 150.06,92.77 -0.03,-0.6 c -0.6,-9.18 0.81,-9.41 1.27,-9.49 0.72,-0.03 2.02,0.02 3.19,9.36 l 0.1,0.7 z m 1.44,-8.55 c -0.32,1.13 -0.38,4.35 -0.23,7.29 l 1.83,-0.02 c -0.41,-2.99 -1.07,-6.18 -1.6,-7.27 z"
+       id="path10"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Bell tower body -->
+    <path
+       d="m 140.9,115.89 h 3.56 c 0,0 0.64,-17.07 -1.87,-16.65 -2.52,0.42 -1.69,16.65 -1.69,16.65 z"
+       id="path12"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 146.69,115.89 h 3.55 c 0,0 0.99,-17.07 -1.52,-16.65 -2.52,0.42 -2.03,16.65 -2.03,16.65 z"
+       id="path14"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Main church body -->
+    <polygon
+       points="166.97,185.35 167.82,122.7 142.92,130.55 151.99,144.23 152.12,185.27 "
+       id="polygon16"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 174.5,148.19 2.9,0.07 c 0,0 0.89,-18.03 -1.36,-17.59 -2.28,0.43 -1.54,17.52 -1.54,17.52 z"
+       id="path18"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="182.81,122.17 182.6,182.77 184.09,182.98 184.49,122.69 "
+       id="polygon20"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="202.87,182.59 202.66,122.5 204.02,122.75 204.14,182.77 "
+       id="polygon22"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Roof -->
+    <polygon
+       points="152.29,118.4 135.92,131.2 135.11,130.21 151.58,117.34 186.34,99.46 186.68,99.76 213.06,123.91 214.94,182.52 213.65,182.56 211.79,124.47 186.12,100.99 "
+       id="polygon24"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 212.3,124.82 c -0.1,-0.02 -9.64,-1.95 -20.02,-1.95 -10.42,0 -25.02,1.46 -25.16,1.47 l -0.14,-1.25 c 0.14,-0.02 14.81,-1.48 25.3,-1.48 10.51,0 20.18,1.94 20.27,1.96 z"
+       id="path26"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="152.49,116.86 135.51,130.71 142.07,131.12 145.23,130.91 167.56,123.06 185.98,100.77 "
+       id="polygon28"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="153.02,145.37 135.11,145.49 135.11,144.23 153,144.12 "
+       id="polygon30"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Church windows -->
+    <path
+       d="m 193.28,147.23 h 3.53 c 0,0 0.82,-19.36 -1.71,-18.86 -2.51,0.48 -1.82,18.86 -1.82,18.86 z"
+       id="path32"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 207.64,148 2.34,0.23 c 0,0 0.72,-17.58 -1.59,-17.58 -1.52,0.01 -0.75,17.35 -0.75,17.35 z"
+       id="path34"
+       style="fill:#ffffff;fill-opacity:1" />
+    <polygon
+       points="186.66,100.62 184.19,122.98 182.82,122.83 185.31,100.49 "
+       id="polygon36"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Left tower/entrance -->
+    <polygon
+       points="129.39,130.3 124.29,144.25 123.41,188 136.57,188.13 136.37,144.25 130.01,131.52 142.5,131.13 142.46,129.87 "
+       id="polygon38"
+       style="fill:#ffffff;fill-opacity:1" />
+    <!-- Hill/ground (beige accent) -->
+    <path
+       d="m 279.9,202.66 c -0.41,-0.24 -39.78,-21.72 -108.04,-17.36 -57.88,3.67 -93.51,19.08 -93.85,19.24 0,0 34.6,-20.47 93.51,-24.2 70.19,-4.42 108.38,22.32 108.38,22.32 z"
+       id="path40"
+       style="fill:#c79a78;fill-opacity:1" />
+  </g>
+</svg>
