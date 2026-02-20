@@ -1,0 +1,1380 @@
+/* ============================================
+   Personnalisations pour Église Saint-Martin
+   Site sobre et élégant pour une église
+   ============================================
+
+   TABLE DES MATIÈRES
+   ==================
+   1. PALETTE DE COULEURS
+   2. VARIABLES CSS
+   3. UTILITAIRES
+   4. STYLES DE BASE
+   5. EN-TÊTE DU SITE
+   6. HERO SECTION
+   7. SECTIONS DE CONTENU
+   8. GRILLES (grid-portrait)
+   9. CARTES D'ÉVÉNEMENTS
+   10. MISE EN AVANT (highlight)
+   11. FOOTER
+   12. FORMULAIRE DE CONTACT
+   13. NAVIGATION RESPONSIVE
+   14. GALERIES PHOTOS
+   15. TIMELINE DES TRAVAUX
+   16. TEXTE INTRO (lead)
+   17. LIENS DE NAVIGATION
+   18. BOUTONS CTA
+   19. GALLERY HERO
+   20. GALLERY MASONRY
+   21. LIGHTBOX
+   22. GALLERY COLLECTION
+   23. GALLERY LIVRES
+   24. IMAGES CONTENU
+   25. RWD-FITGRID
+   26. LETTER STYLING
+
+   ============================================ */
+
+/* ============================================
+   PALETTE DE COULEURS - Inspirée du vitrail et du clocher
+   ============================================
+
+   Couleurs du clocher SVG :
+   - #2b1f17 - Brun foncé (contours, détails)
+   - #c79a78 - Beige/tan (façade claire)
+   - #94775d - Brun moyen (ombres)
+
+   Couleurs du vitrail :
+   - #1e3a5f - Bleu cobalt (primaire)
+   - #8b1a1a - Rouge bordeaux (accent)
+   - #2d6b4f - Vert émeraude (succès)
+   - #c9a227 - Or/jaune (highlight)
+
+   ============================================
+   COLOR CONTRAST PALETTE (Palette de contraste)
+   ============================================
+
+   Référence rapide : quelle couleur utiliser sur quel fond ?
+
+   SUR FOND BLEU (#1e3a5f / #2d4a6f) :
+   ├── Texte principal : #ffffff (blanc)
+   ├── Texte secondaire : #e8e4df (gris très clair)
+   ├── Liens : #f5ebe0 (beige clair)
+   ├── Liens hover : #ffffff (blanc)
+   └── Sous-titres : #c79a78 (beige/tan)
+
+   SUR FOND CLAIR (#faf8f6 / #ffffff) :
+   ├── Texte principal : #2b1f17 (brun foncé)
+   ├── Texte secondaire : #5c4a3d (brun moyen-foncé)
+   ├── Titres h1/h2 : #2b1f17 (brun foncé)
+   ├── Titres h3 : #1e3a5f (bleu cobalt)
+   ├── Liens : #1e3a5f (bleu cobalt)
+   └── Liens hover : #152a45 (bleu foncé)
+
+   ACCENTS / BORDURES :
+   ├── Bordure accent : #94775d (brun moyen)
+   ├── Bordure primaire : #1e3a5f (bleu cobalt)
+   └── Fond highlight : #faf5f0 (crème)
+
+   ============================================ */
+
+/* Variables de couleurs - thème église */
+:root,
+:root:not([data-theme="dark"]),
+[data-theme="light"] {
+  /* Couleur primaire - Bleu cobalt du vitrail */
+  --pico-primary: #1e3a5f;
+  --pico-primary-background: #1e3a5f;
+  --pico-primary-border: #1e3a5f;
+  --pico-primary-underline: rgba(30, 58, 95, 0.5);
+  --pico-primary-hover: #152a45;
+  --pico-primary-hover-background: #152a45;
+  --pico-primary-hover-border: #152a45;
+  --pico-primary-hover-underline: #152a45;
+  --pico-primary-focus: rgba(30, 58, 95, 0.25);
+  --pico-primary-inverse: #ffffff;
+
+  /* Couleurs du clocher (brun) */
+  --clocher-brun-fonce: #2b1f17;
+  --clocher-beige: #c79a78;
+  --clocher-brun-moyen: #94775d;
+
+  /* Couleurs du vitrail */
+  --vitrail-bleu: #1e3a5f;
+  --vitrail-rouge: #8b1a1a;
+  --vitrail-vert: #2d6b4f;
+  --vitrail-or: #c9a227;
+
+  /* Arrière-plans - léger ton chaud */
+  --pico-background-color: #faf8f6;
+  --pico-card-background-color: #ffffff;
+
+  /* Texte - brun foncé pour meilleur contraste */
+  --pico-color: #2b1f17;
+  --pico-muted-color: #5c4a3d;
+
+  /* Titres - brun foncé, bien visible */
+  --pico-h1-color: #2b1f17;
+  --pico-h2-color: #2b1f17;
+  --pico-h3-color: #3d2e24;
+  --pico-h4-color: #4a3a2f;
+  --pico-h5-color: #5c4a3d;
+  --pico-h6-color: #5c4a3d;
+
+  /* Bordures - ton chaud */
+  --pico-muted-border-color: #ddd5cc;
+
+  /* Formulaires - fond blanc et texte foncé pour bon contraste */
+  --pico-form-element-background-color: #ffffff;
+  --pico-form-element-active-background-color: #ffffff;
+  --pico-form-element-focus-color: #ffffff;
+  --pico-form-element-disabled-background-color: #f5f5f5;
+  --pico-form-element-color: #2b1f17;
+  --pico-form-element-placeholder-color: #94775d;
+  --pico-form-element-invalid-active-border-color: #8b1a1a;
+  --pico-form-element-valid-active-border-color: #2d6b4f;
+  --pico-form-element-active-border-color: #1e3a5f;
+  --pico-switch-checked-background-color: #1e3a5f;
+}
+
+/* ============================================
+   UTILITAIRES
+   ============================================ */
+
+.mt-1 { margin-top: 1rem; }
+.mt-1-5 { margin-top: 1.5rem; }
+.mt-2 { margin-top: 2rem; }
+.rounded { border-radius: 0.5rem; }
+.text-center { text-align: center; }
+
+/* Forcer les liens en bleu cobalt partout */
+a {
+  color: #1e3a5f;
+}
+
+a:hover {
+  color: #152a45;
+}
+
+/* Titres - assurer le brun foncé */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--clocher-brun-fonce);
+}
+
+/* Boutons - bleu cobalt */
+button,
+[type="submit"],
+[type="button"],
+[role="button"] {
+  --pico-background-color: #1e3a5f;
+  --pico-border-color: #1e3a5f;
+  --pico-color: #ffffff;
+}
+
+button:hover,
+[type="submit"]:hover,
+[type="button"]:hover,
+[role="button"]:hover {
+  --pico-background-color: #152a45;
+  --pico-border-color: #152a45;
+}
+
+/* Bouton secondaire (outline) avec brun */
+button.secondary,
+[role="button"].secondary {
+  --pico-background-color: transparent;
+  --pico-border-color: var(--clocher-brun-moyen);
+  --pico-color: var(--clocher-brun-fonce);
+}
+
+button.secondary:hover,
+[role="button"].secondary:hover {
+  --pico-background-color: var(--clocher-brun-fonce);
+  --pico-border-color: var(--clocher-brun-fonce);
+  --pico-color: #ffffff;
+}
+
+/* Focus des champs de formulaire */
+input:focus,
+select:focus,
+textarea:focus {
+  --pico-border-color: #1e3a5f;
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+}
+
+/* ============================================
+   EN-TÊTE DU SITE
+   ============================================ */
+
+header.site-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
+  color: white;
+  padding: 0.5rem 0; /* Padding réduit pour banner plus fin */
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 10;
+  overflow: visible; /* Permet au logo de dépasser */
+}
+
+header.site-header a {
+  color: white;
+  text-decoration: none;
+}
+
+header.site-header a:hover {
+  color: var(--clocher-beige);
+}
+
+header.site-header nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo dans le header - GRAND, couleurs originales */
+.logo-link {
+  display: flex;
+  align-items: center; /* Texte centré verticalement par rapport au logo */
+  gap: 1.25rem;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Supprimer le padding du li contenant le logo */
+header.site-header nav ul li:has(.logo-link) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo-img {
+  height: 175px;
+  width: auto;
+  transition: transform 0.3s ease;
+  transform-origin: bottom center; /* Le zoom part du bas, le bas reste fixe */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Inline SVG fill colors - default: white church, brun-moyen hill */
+.logo-img #church {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.logo-img #church .hill {
+  fill: var(--clocher-brun-moyen);
+  transition: fill 0.3s ease;
+}
+
+.logo-link:hover .logo-img {
+  transform: scale(1.03);
+}
+
+/* On hover: entire logo becomes brun-moyen */
+.logo-link:hover .logo-img #church,
+.logo-link:hover .logo-img #church .hill {
+  fill: var(--clocher-brun-moyen);
+}
+
+/* Title SVG in header - inline for CSS control */
+.logo-title {
+  height: 100px;
+  width: auto;
+  align-self: center;
+  pointer-events: none; /* Allow clicks to pass through to parent link */
+}
+
+/* Title SVG fill colors - default: white for top 2 lines, brun-moyen for Villar d'Arène */
+.logo-title .title-top {
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.logo-title .title-bottom {
+  fill: var(--clocher-brun-moyen);
+  transition: fill 0.3s ease;
+}
+
+/* On hover: entire title becomes brun-moyen */
+.logo-link:hover .logo-title .title-top,
+.logo-link:hover .logo-title .title-bottom {
+  fill: var(--clocher-brun-moyen);
+}
+
+/* Screen reader only - hidden visually but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Navigation active */
+.nav-menu a.active {
+  border-bottom: 2px solid var(--clocher-beige);
+  padding-bottom: 0.25rem;
+}
+
+/* ============================================
+   HERO SECTION - Page d'accueil
+   ============================================ */
+
+.hero {
+  background: linear-gradient(rgba(30, 58, 95, 0.55), rgba(30, 58, 95, 0.65)),
+              url('../images/site/vitrail.jpg') center/cover;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 0 -1rem 2rem -1rem;
+  border-radius: 1rem;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* TEXTE HERO BIEN VISIBLE - beige clair sur fond bleu */
+.hero p {
+  color: #f5ebe0;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   SECTIONS DE CONTENU
+   ============================================ */
+
+.content-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+/* Titres de section avec accent brun */
+.content-section h2 {
+  color: var(--clocher-brun-fonce);
+  border-left: 4px solid var(--clocher-brun-moyen);
+  padding-left: 1rem;
+  margin-left: -0.75rem;
+}
+
+.content-section h3 {
+  color: var(--vitrail-bleu);
+}
+
+/* Images dans les grilles de contenu - style par défaut */
+.content-section .grid img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+.content-section .grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.15);
+}
+
+/* Grille avec image portrait - image prend moins de largeur, plus de hauteur */
+.grid-portrait {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.grid-portrait.reverse {
+  grid-template-columns: 200px 1fr;
+}
+
+.grid-portrait img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+.grid-portrait img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.15);
+}
+
+/* Variante auto - l'image utilise sa taille naturelle */
+.grid-portrait.auto {
+  grid-template-columns: 1fr auto;
+  align-items: start; /* Texte aligne en haut */
+}
+
+.grid-portrait.auto.reverse {
+  grid-template-columns: auto 1fr;
+}
+
+.grid-portrait.auto img {
+  width: auto;
+  max-width: 100%;
+  max-height: 500px;
+}
+
+/* Variante pour aligner le titre avec le haut de l'image */
+.grid-portrait.auto h2:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .grid-portrait,
+  .grid-portrait.reverse,
+  .grid-portrait.auto {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-portrait img {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .grid-portrait.auto img {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ============================================
+   CARTES D'ÉVÉNEMENTS
+   ============================================ */
+
+.event-card {
+  background: var(--pico-card-background-color);
+  border-left: 4px solid var(--clocher-brun-moyen);
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.08);
+}
+
+.event-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--vitrail-bleu);
+}
+
+.event-card p {
+  margin: 0;
+  color: var(--pico-muted-color);
+}
+
+/* ============================================
+   MISE EN AVANT - Prix, actualités importantes
+   ============================================ */
+
+.highlight-box {
+  background: linear-gradient(135deg, #faf5f0 0%, #fff 100%);
+  border: 2px solid var(--clocher-brun-moyen);
+  border-left-width: 6px;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 31, 23, 0.08);
+}
+
+.highlight-box h2,
+.highlight-box h3 {
+  color: var(--clocher-brun-fonce);
+  margin-top: 0;
+}
+
+.highlight-box p {
+  color: var(--clocher-brun-fonce);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer.site-footer {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
+  color: #ffffff;
+  padding: 2rem 0;
+  margin-top: 1rem;
+}
+
+footer.site-footer a {
+  color: #f5ebe0; /* Beige clair - bon contraste sur bleu */
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 235, 224, 0.4);
+}
+
+footer.site-footer a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+footer.site-footer h4 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+footer.site-footer p,
+footer.site-footer li {
+  color: #e8e4df; /* Gris très clair - lisible sur bleu */
+}
+
+footer.site-footer ul,
+footer.site-footer ul li {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Bouton CTA sur fond sombre (footer) - utilise l'or du vitrail */
+footer.site-footer .cta-button {
+  background: #c9a227; /* Or/jaune du vitrail */
+  color: #ffffff !important; /* Blanc pour contraste */
+  box-shadow: 0 2px 8px rgba(201, 162, 39, 0.3);
+  text-decoration: none;
+}
+
+/* Centrer toutes les colonnes du footer */
+footer.site-footer .footer-content > div {
+  text-align: center;
+}
+
+footer.site-footer .cta-button:hover {
+  background: #d4af37; /* Or plus clair au hover */
+  box-shadow: 0 4px 12px rgba(201, 162, 39, 0.4);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-badge {
+  height: 60px;
+  width: auto;
+  border-radius: 0.25rem;
+}
+
+/* ============================================
+   FORMULAIRE DE CONTACT
+   ============================================ */
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-info {
+  background: var(--pico-card-background-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--clocher-brun-moyen);
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.08);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  color: var(--clocher-brun-fonce);
+}
+
+/* ============================================
+   NAVIGATION RESPONSIVE
+   ============================================ */
+
+/* Tablette - header stacks vertically */
+@media (max-width: 1024px) {
+  header.site-header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .logo-link {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    height: 220px;
+  }
+
+  .logo-title {
+    height: 90px;
+  }
+
+  /* Nav items s'adaptent */
+  header.site-header nav ul.nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header.site-header {
+    margin-bottom: 1rem;
+  }
+
+  header.site-header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+}
+
+/* ============================================
+   GALERIE PHOTOS
+   ============================================ */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.gallery img {
+  width: auto;
+  height: auto;
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.15);
+}
+
+/* Galerie avec légendes */
+.gallery figure {
+  margin: 0;
+}
+
+.gallery figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Galerie dépliant - taille lisible sans cliquer */
+.gallery-depliant img {
+  max-height: none;
+  max-width: 100%;
+}
+
+/* ============================================
+   TIMELINE DES TRAVAUX
+   ============================================ */
+
+.timeline-item {
+  background: var(--pico-card-background-color);
+  border-left: 4px solid var(--vitrail-bleu);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.08);
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  background: var(--vitrail-bleu);
+  border-radius: 50%;
+  border: 3px solid var(--pico-background-color);
+}
+
+.timeline-item h3 {
+  margin-top: 0;
+  color: var(--vitrail-bleu);
+}
+
+.timeline-item ul {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item > p:last-child {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--pico-muted-color);
+}
+
+/* ============================================
+   TEXTE INTRO (LEAD)
+   ============================================ */
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--pico-muted-color);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   LIENS DE NAVIGATION SECONDAIRE
+   ============================================ */
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--clocher-brun-fonce);
+  transition: all 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--vitrail-bleu);
+  border-color: var(--vitrail-bleu);
+  color: white;
+}
+
+/* ============================================
+   BOUTON D'APPEL À L'ACTION
+   ============================================ */
+
+.cta-button {
+  display: inline-block;
+  background: var(--vitrail-bleu);
+  color: white !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.2);
+}
+
+.cta-button:hover {
+  background: var(--pico-primary-hover);
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Bouton secondaire avec brun */
+.cta-button.secondary {
+  background: var(--clocher-brun-moyen);
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.2);
+}
+
+.cta-button.secondary:hover {
+  background: var(--clocher-brun-fonce);
+}
+
+.cta-button + .cta-button {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .highlight-box .cta-button {
+    display: block;
+    text-align: center;
+  }
+
+  .cta-button + .cta-button {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
+}
+
+/* ============================================
+   GALERIE HERO - Image et texte cote a cote
+   ============================================ */
+
+.gallery-hero-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.gallery-hero-image {
+  margin: 0;
+}
+
+.gallery-hero-image img {
+  max-height: 450px;
+  width: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(43, 31, 23, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-hero-image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(43, 31, 23, 0.2);
+}
+
+.gallery-hero-text {
+  padding: 1rem 0;
+}
+
+.gallery-hero-text h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.gallery-hero-text .lead {
+  margin-bottom: 1rem;
+}
+
+.gallery-hero-caption {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--pico-muted-color);
+  font-style: italic;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+}
+
+@media (max-width: 900px) {
+  .gallery-hero-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Sur mobile: image en premier, puis texte */
+  .gallery-hero-image {
+    order: 1;
+  }
+
+  .gallery-hero-text {
+    order: 2;
+  }
+
+  .gallery-hero-image img {
+    max-height: 350px;
+    max-width: 100%;
+  }
+
+  /* Caption plus discrete sur mobile */
+  .gallery-hero-caption {
+    margin-top: 1rem;
+  }
+}
+
+/* ============================================
+   GALERIE MASONRY - Images sans recadrage
+   ============================================ */
+
+.gallery-masonry {
+  column-count: 4;
+  column-gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery-masonry figure {
+  break-inside: avoid;
+  margin: 0 0 1rem 0;
+}
+
+.gallery-masonry img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+.gallery-masonry img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.15);
+}
+
+.gallery-masonry figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 1200px) {
+  .gallery-masonry { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+  .gallery-masonry { column-count: 1; }
+}
+
+/* ============================================
+   LIGHTBOX - Affichage plein ecran
+   ============================================ */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
+  border-radius: 0.5rem;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+/* ============================================
+   GALERIE COLLECTION - Marques-pages et posters
+   Format portrait, images complètes sans recadrage
+   ============================================ */
+
+.gallery-bookmarks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery-bookmarks figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-bookmarks img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.15);
+  background: #f5f5f5;
+}
+
+.gallery-bookmarks img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.25);
+}
+
+.gallery-bookmarks figcaption {
+  font-size: 0.8rem;
+  color: var(--pico-muted-color);
+  margin-top: 0.5rem;
+}
+
+/* Galerie posters - taille naturelle, centré */
+.gallery-posters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+.gallery-posters figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-posters img {
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.15);
+}
+
+.gallery-posters img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(43, 31, 23, 0.25);
+}
+
+.gallery-posters figcaption {
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   GALERIE LIVRES - Couvertures de livres
+   ============================================ */
+
+.gallery-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.gallery-books figure {
+  margin: 0;
+}
+
+.gallery-books img {
+  width: auto;
+  height: auto;
+  max-height: 200px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+.gallery-books img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(43, 31, 23, 0.2);
+}
+
+/* Variante single - livre unique, plus grand */
+.gallery-books.single img {
+  max-height: 280px;
+}
+
+/* ============================================
+   IMAGES DANS LE CONTENU - Styles generaux
+   ============================================ */
+
+/* Images autonomes (pas dans une grille) */
+main img {
+  cursor: pointer;
+}
+
+/* Empêcher le recadrage sur les images de livres/art */
+.content-section .grid .gallery-books img,
+.content-section .gallery-books img {
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* ============================================
+   RWD-FITGRID - Layout responsive avec image laterale
+   Utilise fitgrid mais avec gap augmente pour les
+   images a gauche. Mobile-compatible.
+
+   Breakpoints utilises dans ce site:
+   - 480px  : Tres petit mobile (masonry 1 col)
+   - 768px  : Mobile/tablette (grilles empilees)
+   - 900px  : Tablette (gallery-hero empile)
+   - 1200px : Petit desktop (masonry 3 cols)
+   ============================================ */
+
+.rwd-fitgrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  /* align-items non defini - chaque element peut utiliser align-self */
+}
+
+/* Le texte commence en haut */
+.rwd-fitgrid > div:not(:has(img)) {
+  align-self: start;
+}
+
+/* Variante avec titre a cote de l'image */
+.rwd-fitgrid.with-title {
+  align-items: start;
+}
+
+.rwd-fitgrid.with-title h2 {
+  margin-top: 0;
+}
+
+.rwd-fitgrid img {
+  width: auto;
+  max-width: 100%;
+  max-height: 700px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+  /* Espacement egal haut/bas automatique via align-self */
+  align-self: center;
+}
+
+/* Pour les images tres hautes, on les aligne en haut */
+.rwd-fitgrid.align-top img {
+  align-self: start;
+}
+
+@media (max-width: 768px) {
+  .rwd-fitgrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .rwd-fitgrid img {
+    max-width: 250px;
+    margin: 0 auto;
+    order: -1; /* Image en premier sur mobile */
+    display: block;
+  }
+
+  /* Retablir l'alignement du texte */
+  .rwd-fitgrid > div:not(:has(img)) {
+    text-align: left;
+  }
+}
+
+/* ============================================
+   PROGRAMME LAYOUT - Image flottante en L
+   Image à droite, contenu s'enroule autour
+   ============================================ */
+
+/* Grille programme : événements à gauche, affiche à droite centrée */
+.programme-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.programme-layout .event-card:last-child {
+  margin-bottom: 0;
+}
+
+.programme-aside-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.1);
+}
+
+/* Grille 2x2 pour les événements restants */
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.event-grid .event-card {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .programme-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-aside-img {
+    order: -1;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   LETTER STYLING (Lettres officielles)
+   ============================================ */
+
+.letter {
+  background-color: #fdfcfa;
+  border: 1px solid var(--clocher-brun-moyen);
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.8;
+  box-shadow: 0 2px 8px rgba(43, 31, 23, 0.08);
+}
+
+.letter p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.letter-greeting {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem !important;
+}
+
+.letter-closing {
+  margin-top: 1.5rem !important;
+  font-style: italic;
+}
+
+.letter-signature {
+  margin-top: 1.5rem !important;
+  text-align: right !important;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .letter {
+    padding: 1rem 1.25rem;
+  }
+}

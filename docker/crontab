@@ -1,0 +1,5 @@
+# Update visitor count every 10 minutes
+*/10 * * * * python3 /scripts/count_visitors.py >> /var/log/visitor_count.log 2>&1
+
+# Export monthly CSV snapshot (1st of each month at 02:00)
+0 2 1 * * python3 /scripts/count_visitors.py --export >> /var/log/visitor_count.log 2>&1

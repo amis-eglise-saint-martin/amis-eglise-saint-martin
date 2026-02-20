@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.old
+
+# Secrets et configurations locales
+*.env
+!*.env.example
+config.local.json
+credentials.json
+
+# Runtime data
+docker/visitor_count.json
+
+# Local deployment config
+docker/docker-compose.traefik.yml
+archive/old-site-content-2025-01.zip
