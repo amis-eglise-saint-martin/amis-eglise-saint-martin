@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Église Saint-Martin de Villar-d'Arène</title>
+  <meta name="description" content="Contactez l'association des Amis de l'église Saint-Martin de Villar-d'Arène.">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://{{DOMAIN}}/association/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Amis de l'Église Saint-Martin">
+  <meta property="og:title" content="Contact - Église Saint-Martin de Villar-d'Arène">
+  <meta property="og:description" content="Contactez l'association des Amis de l'église Saint-Martin de Villar-d'Arène.">
+  <meta property="og:url" content="https://{{DOMAIN}}/association/contact.html">
+  <meta property="og:image" content="https://{{DOMAIN}}/assets/images/site/paysage-meije.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact - Église Saint-Martin de Villar-d'Arène">
+  <meta name="twitter:description" content="Contactez l'association des Amis de l'église Saint-Martin de Villar-d'Arène.">
+  <meta name="twitter:image" content="https://{{DOMAIN}}/assets/images/site/paysage-meije.jpg">
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Église Saint-Martin de Villar-d'Arène",
+    "image": "https://{{DOMAIN}}/assets/images/site/eglise-hero.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9 rue du Four",
+      "addressLocality": "Villar-d'Arène",
+      "postalCode": "05480",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.0433,
+      "longitude": 6.3419
+    }
+  }
+  </script>
+
+  <!-- Pico CSS -->
+  <link rel="stylesheet" href="/assets/css/pico.min.css">
+  <!-- Personnalisations -->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/site/favicon.svg">
+</head>
+<body>
+
+  <!-- HEADER (chargé automatiquement) -->
+  <div id="header"></div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="container">
+
+    <h1>Contactez-nous</h1>
+
+    <div class="grid">
+
+      <!-- Colonne gauche : Formulaire -->
+      <div>
+        <h2>Envoyez-nous un message</h2>
+
+        <p>L'association des Amis de l'église Saint-Martin est à votre disposition pour répondre à vos questions concernant :</p>
+        <ul>
+          <li>Nos actions de restauration</li>
+          <li>Les événements culturels</li>
+          <li>L'adhésion à l'association</li>
+          <li>Les possibilités de mécénat</li>
+        </ul>
+
+        <!-- Formulaire Formspree -->
+        <form action="https://formspree.io/f/{{FORMSPREE_ID}}" method="POST" class="contact-form">
+
+          <div class="grid">
+            <label>
+              Nom <span aria-label="requis">*</span>
+              <input type="text" name="nom" required placeholder="Votre nom">
+            </label>
+
+            <label>
+              Prénom <span aria-label="requis">*</span>
+              <input type="text" name="prenom" required placeholder="Votre prénom">
+            </label>
+          </div>
+
+          <label>
+            Email <span aria-label="requis">*</span>
+            <input type="email" name="email" required placeholder="votre@email.com">
+          </label>
+
+          <label>
+            Téléphone
+            <input type="tel" name="telephone" placeholder="06 12 34 56 78">
+          </label>
+
+          <label>
+            Sujet
+            <select name="sujet">
+              <option value="info">Demande d'information</option>
+              <option value="adhesion">Adhésion</option>
+              <option value="mecenat">Mécénat</option>
+              <option value="visite">Visite de l'église</option>
+              <option value="autre">Autre</option>
+            </select>
+          </label>
+
+          <label>
+            Message <span aria-label="requis">*</span>
+            <textarea name="message" rows="5" required placeholder="Votre message..."></textarea>
+          </label>
+
+          <!-- Champ anti-spam caché -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit">Envoyer le message</button>
+
+        </form>
+
+      </div>
+
+      <!-- Colonne droite : Informations de contact -->
+      <div>
+
+        <!-- Image de l'église -->
+        <img src="/assets/images/site/eglise-hero.jpg" alt="Église Saint-Martin de Villar-d'Arène" class="rounded" style="margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
+
+        <aside class="contact-info">
+          <h3>Coordonnées</h3>
+
+          <p>
+            <strong>Email</strong><br>
+            <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
+          </p>
+
+          <p>
+            <strong>Téléphone</strong><br>
+            <a href="tel:{{CONTACT_PHONE_TEL}}">{{CONTACT_PHONE}}</a>
+          </p>
+
+          <p>
+            <strong>Adresse postale</strong><br>
+            Association des Amis de l'église Saint-Martin<br>
+            9 rue du Four<br>
+            05480 Villar d'Arène
+          </p>
+        </aside>
+
+        <aside class="contact-info mt-1-5">
+          <h3>Horaires de permanence</h3>
+          <p>Les bénévoles de l'association sont disponibles :</p>
+          <ul>
+            <li><strong>Période estivale</strong> (juin-septembre) : selon les événements</li>
+            <li><strong>Reste de l'année</strong> : sur rendez-vous</li>
+          </ul>
+        </aside>
+
+        <aside class="contact-info mt-1-5">
+          <h3>Nous rejoindre</h3>
+          <p>Découvrez comment devenir membre de notre association et soutenir la sauvegarde de l'église.</p>
+          <p><a href="/association/adhesion.html" class="cta-button">Devenir membre</a></p>
+        </aside>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER (chargé automatiquement) -->
+  <div id="footer"></div>
+
+  <!-- Lightbox pour agrandir les images -->
+  <script src="/assets/js/lightbox.js"></script>
+
+</body>
+</html>
