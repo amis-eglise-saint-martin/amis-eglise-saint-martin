@@ -1,0 +1,45 @@
+# Production deployment (registry image + Traefik + runtime DOMAIN)
+# Synced to VPS by: just villar-prod-deploy
+# Requires .env with IMAGE and DOMAIN on the target server
+name: villar
+
+services:
+  web:
+    image: ${IMAGE:?IMAGE is required}
+    container_name: villar
+    restart: unless-stopped
+    environment:
+      - DOMAIN=${DOMAIN:-www.amiseglisevillardarene.fr}
+      - SA_DOMAIN=amiseglisevillardarene.fr
+    volumes:
+      - villar-logs:/var/log/nginx
+      - villar-data:/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=docker_main"
+      - "traefik.http.routers.villar.rule=Host(`${DOMAIN:-www.amiseglisevillardarene.fr}`)"
+      - "traefik.http.routers.villar.entrypoints=websecure"
+      - "traefik.http.routers.villar.tls=true"
+      - "traefik.http.routers.villar.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.villar.service=villar"
+      - "traefik.http.services.villar.loadbalancer.server.port=80"
+      # Bare domain → www redirect (HTTPS)
+      - "traefik.http.routers.villar-bare.rule=Host(`amiseglisevillardarene.fr`)"
+      - "traefik.http.routers.villar-bare.entrypoints=websecure"
+      - "traefik.http.routers.villar-bare.tls=true"
+      - "traefik.http.routers.villar-bare.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.villar-bare.middlewares=villar-redirect-www"
+      - "traefik.http.routers.villar-bare.service=villar"
+      - "traefik.http.middlewares.villar-redirect-www.redirectregex.regex=^https://amiseglisevillardarene\\.fr/(.*)"
+      - "traefik.http.middlewares.villar-redirect-www.redirectregex.replacement=https://www.amiseglisevillardarene.fr/$${1}"
+      - "traefik.http.middlewares.villar-redirect-www.redirectregex.permanent=true"
+    networks: [main]
+
+networks:
+  main:
+    external: true
+    name: docker_main
+
+volumes:
+  villar-logs:
+  villar-data:
